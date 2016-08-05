@@ -126,7 +126,9 @@
       // shows for tap events, which seem to trigger a mouseup too soon after
       // mousedown.
       window.setTimeout(function() {
-        this.rippleElement_.classList.remove(this.CssClasses_.IS_VISIBLE);
+        if (this.rippleElement_) {
+          this.rippleElement_.classList.remove(this.CssClasses_.IS_VISIBLE);
+        }
       }.bind(this), 0);
     }
   };
